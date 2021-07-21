@@ -1,7 +1,9 @@
-https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/
+26.[删除有序数组的重复项](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/)
+
 双指针
 cur遍历所有的元素
 pre记住所有不重复的元素的下标
+```java
 class Solution {
     public int removeDuplicates(int[] nums) {
         int pre = 0;
@@ -17,13 +19,15 @@ class Solution {
              nums[pre] = nums[cur];
         }
         return pre+1;
-
     }
 }
-https://leetcode-cn.com/problems/rotate-array/comments/
+```
+189.[旋转数组](https://leetcode-cn.com/problems/rotate-array/comments/)
+
 1.时间复杂度O(kn)
   空间复杂度O(1)
 //超时
+```java
 class Solution {
     public void rotate(int[] nums, int k) {
         int l = nums.length;
@@ -38,10 +42,12 @@ class Solution {
            k--;
        }
     }
-}
+```
+
 2.多次翻转
 时间复杂度O(n)
 空间复杂度O(1)
+```java
 class Solution {
     /**
     1234567
@@ -65,10 +71,13 @@ class Solution {
         }
     }
 }
-https://leetcode-cn.com/problems/merge-two-sorted-lists/
+```
+21[合并两个有序链表](https://leetcode-cn.com/problems/merge-two-sorted-lists/)
+
 简单解法
 空间O(1)
 时间O(n+k)
+```java
 class Solution {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         if(l1 == null){return l2;}
@@ -110,10 +119,12 @@ class Solution {
 
     }
 }
-https://leetcode-cn.com/problems/merge-sorted-array/
+```
+88[合并有序数组](https://leetcode-cn.com/problems/merge-sorted-array/)
 //尾插法
 空间O(1)
 时间O(n)
+```java
 class Solution {
     /**
     [1,2,4,0,0,0,]
@@ -146,3 +157,4 @@ class Solution {
 
     }
 }
+```
