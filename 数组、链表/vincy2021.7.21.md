@@ -1,0 +1,160 @@
+26.[删除有序数组的重复项](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/)
+
+双指针
+cur遍历所有的元素
+pre记住所有不重复的元素的下标
+```java
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        int pre = 0;
+        int cur = 1;
+        while(cur < nums.length){
+            if(nums[pre] == nums[cur]){
+                while(nums[pre] == nums[cur]){
+                    cur++;
+                if(cur >= nums.length){return pre+1;}
+                }
+            }
+             pre++;
+             nums[pre] = nums[cur];
+        }
+        return pre+1;
+    }
+}
+```
+189.[旋转数组](https://leetcode-cn.com/problems/rotate-array/comments/)
+
+1.时间复杂度O(kn)
+  空间复杂度O(1)
+//超时
+```java
+class Solution {
+    public void rotate(int[] nums, int k) {
+        int l = nums.length;
+        int i;
+        k%=l;
+       while(k > 0){
+           int temp = nums[l-1];
+           for(i = l-2;i >= 0;i--){
+               nums[i+1] = nums[i];
+           }
+           nums[0] = temp;
+           k--;
+       }
+    }
+```
+
+2.多次翻转
+时间复杂度O(n)
+空间复杂度O(1)
+```java
+class Solution {
+    /**
+    1234567
+    7654321
+    765
+    4321
+     */ 
+    public void rotate(int[] nums, int k) {
+        int l = nums.length;
+         k = k % l;
+        reV(nums,0,l-1);
+        reV(nums,0,k-1);
+        reV(nums,k,l-1);
+
+    }
+    private void reV(int[] nums,int start,int end){
+        while(start < end){
+            int temp = nums[end];
+            nums[end--] = nums[start];
+            nums[start++] = temp;
+        }
+    }
+}
+```
+21[合并两个有序链表](https://leetcode-cn.com/problems/merge-two-sorted-lists/)
+
+简单解法
+空间O(1)
+时间O(n+k)
+```java
+class Solution {
+    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+        if(l1 == null){return l2;}
+        if(l2 == null){return l1;}
+        //首个点的处理方法
+        ListNode l3;
+        //用哨兵节点的话可以避免出现第一个比较
+        if(l1.val >= l2.val){
+            l3 = l2;
+            l2 = l2.next;
+        }
+        else{
+             l3 = l1;
+            l1 = l1.next;
+        }
+        ListNode l4 = l3;//记住节点
+        //中间的点结束条件是有一个走完了
+        while(l1 != null && l2 != null){
+            if(l1.val >= l2.val){
+                l3.next = l2;
+                l3 = l3.next;
+                l2 = l2.next;
+            }
+            else{
+                l3.next = l1;
+                l3 = l3.next;
+                l1 = l1.next;
+            }
+
+        }
+        if(l1 == null){
+            l3.next = l2;
+        }
+        else{
+            l3. next = l1;
+        }
+        return l4;
+
+
+    }
+}
+```
+88[合并有序数组](https://leetcode-cn.com/problems/merge-sorted-array/)
+//尾插法
+空间O(1)
+时间O(n)
+```java
+class Solution {
+    /**
+    [1,2,4,0,0,0,]
+    [2,3,6]
+     */
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int i = m+n-1;
+        
+        //把n的插完（关键）
+        while(n >= 1 && m >= 1){
+            if(nums2[n-1] >= nums1[m-1]){
+                nums1[i] = nums2[n-1];
+                n--;
+            }
+            else{
+                nums1[i] = nums1[m-1];
+                m--; 
+            }
+            i--;
+        }
+        //假如m插完了
+        if(m < 1){
+            while(i >= 0){
+                nums1[i] = nums2[n-1];
+                i--;
+                n--;
+            }
+        }
+       
+
+    }
+}
+```
