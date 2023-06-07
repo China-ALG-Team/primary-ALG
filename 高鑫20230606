@@ -1,0 +1,35 @@
+# **JAVA6** [**判断体重指数**](https://www.nowcoder.com/practice/688f96cc38bb4a76996698d2f987b1b5?tpId=220&tqId=2109873&ru=%2Fpractice%2F6817945637dd4a31811d38313653e967&qru=%2Fta%2Fprimary-grammar-java%2Fquestion-ranking&sourceUrl=%2Fexam%2Foj%3Fpage%3D1%26tab%3D%25E8%25AF%25AD%25E6%25B3%2595%25E7%25AF%2587%26topicId%3D220)
+
+## 描述
+
+体重指数 = 体重 (kg) / ( 身高 (m) × 身高 (m) )，小于18.5属于偏瘦，介于18.5和20.9之间（左闭右开）属于苗条，介于20.9和24.9之间（左闭右闭）属于适中，超过24.9属于偏胖。下面由你来编写一段逻辑，算出输入了身高和体重的用户的体重指数，并返回他们的身材状态。(体重指数请使用double类型)
+
+### 输入描述：
+
+用户的身高（m）和用户的体重（kg）
+
+### 输出描述：
+
+体重指数代表的用户身材状态
+import java.util.Scanner;
+
+public class java6 {
+    public static void main(String[] args) {
+        //体重指数=体重/(身高*身高)
+        Scanner sc = new Scanner(System.in);
+        System.out.println("输入你的体重");
+        double weight = sc.nextDouble();
+        System.out.println("输入你的身高");
+        double height = sc.nextDouble();
+        double shu =weight / (height * height);
+        if (shu < 18.5){
+            System.out.println("偏瘦");
+        }else if (shu >= 18.5 && shu < 20.9){
+            System.out.println("苗条");
+        }else if (shu >=20.9 && shu <24.9){
+            System.out.println("适中");
+        }else if(shu > 24.9){
+            System.out.println("偏胖");
+        }
+    }
+}
