@@ -1,0 +1,17 @@
+public class java20 {
+    private int age;
+    public void setAge(int age){
+        if(age<0){
+            this.age=0;
+        }else if(age>200){
+            this.age=200;
+        }else{
+            this.age=age;
+        }
+    }
+    public int getAge(){
+        return age;
+    }
+
+
+}
