@@ -1,0 +1,15 @@
+
+class Sub extends Base {
+
+    //write your code here......
+    public Sub(int x,int y){
+        super(x,y);
+    }
+    public void calculate() {
+        if(getY()==0){
+             System.out.println("Error");
+        }else{
+        System.out.println(getX() / getY());
+        }
+    }
+}
