@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        Scanner scanner = new Scanner(System.in);
+        while (scanner.hasNext()) {
+            String className = scanner.next();
+            // print就是需要你定义的方法
+            print(Class.forName(className).newInstance());
+        }
+    }
+
+    //write your code here......
+     public static void print(Object obj) {
+        System.out.print(obj.toString());
+    }
+ 
+
+}
