@@ -1,0 +1,9 @@
+ public int sum() {
+       return super.getX() + super.getY();
+   }
+     
+    public int avg() {
+        return sum() / 2;
+    }
+ 
+}
