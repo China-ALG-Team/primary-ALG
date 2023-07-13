@@ -1,0 +1,4 @@
+@Override
+public int getX(){
+    return (super.getX())*10;
+}
