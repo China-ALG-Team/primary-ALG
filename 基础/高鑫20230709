@@ -1,0 +1,5 @@
+ StringBuffer sb = new StringBuffer(str);
+        for (int i = str.length() - 3; i >= 0; i -= 3) {
+            sb.insert(i, ",");
+        }
+        System.out.println(sb);
