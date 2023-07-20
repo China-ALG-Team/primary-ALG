@@ -1,0 +1,2 @@
+System.out.println(random.nextInt(6)+1);
+            return;

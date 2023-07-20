@@ -1,0 +1,8 @@
+ int[] month = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};  // 一年的月天数
+        // 如果是闰年就特殊处理
+        if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+            month[1] = 29;
+        }
+        for (int i = 1; i <= month.length; i++) {
+            System.out.println(year + "年" + i + "月:" + month[i-1] + "天");
+        }

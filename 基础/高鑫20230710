@@ -1,0 +1,9 @@
+int ind = 0, count = 0;
+        while ((ind = str.indexOf(word, ind)) != -1) { // -1表示找完了
+            count++; // 计数
+            ind++; // ind + 1，避免死循环
+
+
+        }
+        return count;
+    }
