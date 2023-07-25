@@ -1,0 +1,8 @@
+class ScoreException extends Exception {
+ 
+    //write your code here......
+    public ScoreException(String message){
+       super(message); 
+    }
+}
+//这是第37题不会，里面的try函数，还有这个throw new看的我一脸懵，还有catch函数我也不懂，Exception我看了一会觉得这个好像是和throw new是一体的，度娘的搜索一直含糊不清
