@@ -1,0 +1,17 @@
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String str = scanner.nextLine();
+        scanner.close();
+        HashSet<Character> hs = new HashSet<>();//不包含重复元素的集合
+ 
+        //write your code here......
+        for(int i=0;i<str.length();i++)
+        {
+            hs.add(str.charAt(i));
+        }
+        for (char c:hs) {
+            System.out.print(c);
+        }
+    }
+}
