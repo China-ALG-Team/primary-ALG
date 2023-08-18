@@ -1,0 +1,4 @@
+ Set<Map.Entry<Character, Integer>> entrys = map.entrySet();
+        for (Map.Entry<Character, Integer> entry : entrys) {
+            System.out.println(entry.getKey() + ":" + entry.getValue());
+        }
