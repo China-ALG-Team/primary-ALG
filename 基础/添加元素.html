@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>添加元素</title>
+</head>
+
+<body>
+    <script>
+        //需求：在数组 arr 开头添加元素 item。不要直接修改数组 arr，结果返回新的数组
+        //unshift()方法用于在数组的开头添加一个或多个元素，并返回新的长度。
+        //push()方法用于在数组的末尾添加一个或多个元素，并返回新的长度。
+        let arr = [1, 2, 3, 4, 5];
+        let num = 10;
+        function addElement(arr, num) {
+            let newArr = arr.unshift(num);
+            return arr;
+        }
+        let newArr = addElement(arr, num);
+        console.log(newArr);
+    </script>
+</body>
+
+</html>
