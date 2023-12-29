@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组求和</title>
+</head>
+
+<body>
+    <script>
+        //需求:计算并返回给定数组 arr 中所有元素的总和
+        let arr = [1, 2, 3, 6];
+        function numArr(arr) {
+            let num = 0;
+            for (let i = 0; i < arr.length; i++) {
+                num = num + arr[i];
+            }
+            return num;
+        }
+        let num = numArr(arr);
+        console.log(num);
+    </script>
+</body>
+
+</html>

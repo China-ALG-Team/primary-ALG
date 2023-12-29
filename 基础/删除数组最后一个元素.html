@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>删除数组最后一个元素</title>
+</head>
+
+<body>
+    <script>
+        //需求：删除数组 arr 最后一个元素。不要直接修改数组 arr，结果返回新的数组
+        let arr = [1, 2, 3, 4, 5, 6];
+        function removeLast(arr) {
+            let newArr = arr.slice(0, arr.length - 1);
+            return newArr;
+        }
+        let newArr = removeLast(arr);
+        newArr.forEach(i => {
+            console.log(i);
+        });
+    </script>
+</body>
+
+</html>
